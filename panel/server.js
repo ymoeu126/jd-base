@@ -88,7 +88,7 @@ async function step1() {
                 'Accept': 'application/json, text/plain, */*',
                 'Accept-Language': 'zh-cn',
                 'Referer': 'https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=' + timeStamp + '&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport',
-                'User-Agent': 'jdapp;iPad;10.0.10;13.3;e9a3d9d9c58deb9dd840392eefb482c9c14caeaa;network/;ADID/E319703E-95E1-401E-909E-83D438AE5E7B;model/iPhone10,2;addressid/0;appBuild/167764;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1',
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main%2F1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0',
                 'Host': 'plogin.m.jd.com'
             }
         });
@@ -121,7 +121,7 @@ async function step2() {
                 'Accept': 'application/json, text/plain, */*',
                 'Cookie': cookies,
                 'Referer': 'https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=' + timeStamp + '&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport',
-                'User-Agent': 'jdapp;iPad;10.0.10;13.3;e9a3d9d9c58deb9dd840392eefb482c9c14caeaa;network/;ADID/E319703E-95E1-401E-909E-83D438AE5E7B;model/iPhone10,2;addressid/0;appBuild/167764;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1',
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main%2F1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0',
                 'Host': 'plogin.m.jd.com',
             }
         });
@@ -159,7 +159,7 @@ async function checkLogin() {
                 'Connection': 'Keep-Alive',
                 'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8',
                 'Accept': 'application/json, text/plain, */*',
-                'User-Agent': 'jdapp;iPad;10.0.10;13.3;e9a3d9d9c58deb9dd840392eefb482c9c14caeaa;network/;ADID/E319703E-95E1-401E-909E-83D438AE5E7B;model/iPhone10,2;addressid/0;appBuild/167764;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1',
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main%2F1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0',
             }
         });
 
