@@ -127,13 +127,13 @@ export QYWX_AM=""
 ##gobot_qq 填写推送到个人QQ或者QQ群号
 ##go-cqhttp相关API https://docs.go-cqhttp.org/api
 ##推送到个人QQ: http://127.0.0.1/send_private_msg  群：http://127.0.0.1/send_group_msg 
-export GOBOT_URL = ""
+export GOBOT_URL=""
 
 ##访问密钥
-export GOBOT_TOKEN = ""
+export GOBOT_TOKEN=""
 
 ##如果GOBOT_URL设置 /send_private_msg 则需要填入 user_id=个人QQ 相反如果是 /send_group_msg 则需要填入 group_id=QQ群
-export GOBOT_QQ = ""
+export GOBOT_QQ=""
 
 ################################## 定义每日签到的通知形式（选填） ##################################
 ## js脚本每日签到提供3种通知方式，分别为：
