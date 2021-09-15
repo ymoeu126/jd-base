@@ -11,6 +11,9 @@ ConfigDir=${ShellDir}/config
 FileConf=${ConfigDir}/config.sh
 FileConfSample=${ShellDir}/sample/config.sh.sample
 LogDir=${ShellDir}/log
+ACCOUNT_PATH=/usr/share/nginx/html/JDAccount.json
+TMP_CONFIGFILE=/jd/config/tmpConfig.sh
+WEB_PATH=/usr/share/nginx/html/
 ListScripts=($(
   cd ${ScriptsDir}
   ls *.js | grep -E "j[drx]_"
@@ -237,14 +240,6 @@ case $# in
   elif [[ $1 == resetpwd ]]; then
     Reset_Pwd
   else
-    Run_Normal $1
-  fi
-  ;;
-2)
-  if [[ $2 == now ]]; then
-    ACCOUNT_PATH=/usr/share/nginx/html/JDAccount.json
-    TMP_CONFIGFILE=/jd/config/tmpConfig.sh
-    WEB_PATH=/usr/share/nginx/html/
     if [ -x "$(command -v jq)" ] && [ -f $ACCOUNT_PATH ]; then
       USERS=$(jq -r "to_entries|map(\"\(.key)\")|.[]" $ACCOUNT_PATH)
       for USER in $USERS; do
@@ -255,13 +250,38 @@ case $# in
           php -r "require '${WEB_PATH}/functions.php';replaceCookieInShell('${USER}');updateWorkWechatConfig('${USER}');" &&
           cd /jd
         FileConf=$TMP_CONFIGFILE
-        Run_Normal $1 $2 &
+        Run_Normal $1 1
       done
       cd $WEB_PATH &&
         php -r "require '${WEB_PATH}/functions.php';getUnBindUsers();updateWorkWechatConfig();" &&
         cd /jd
       FileConf=$TMP_CONFIGFILE
-      Run_Normal $1 $2 &
+      Run_Normal $1 1
+    else
+      Run_Normal $1
+    fi
+
+  fi
+  ;;
+2)
+  if [[ $2 == now ]]; then
+    if [ -x "$(command -v jq)" ] && [ -f $ACCOUNT_PATH ]; then
+      USERS=$(jq -r "to_entries|map(\"\(.key)\")|.[]" $ACCOUNT_PATH)
+      for USER in $USERS; do
+        for i in {1..50}; do
+          unset 'Cookie'$i
+        done
+        cd $WEB_PATH &&
+          php -r "require '${WEB_PATH}/functions.php';replaceCookieInShell('${USER}');updateWorkWechatConfig('${USER}');" &&
+          cd /jd
+        FileConf=$TMP_CONFIGFILE
+        Run_Normal $1 $2
+      done
+      cd $WEB_PATH &&
+        php -r "require '${WEB_PATH}/functions.php';getUnBindUsers();updateWorkWechatConfig();" &&
+        cd /jd
+      FileConf=$TMP_CONFIGFILE
+      Run_Normal $1 $2
     else
       Run_Normal $1 $2
     fi
