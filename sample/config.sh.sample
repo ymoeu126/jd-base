@@ -471,7 +471,7 @@ ForOtherCfd6=""
 ################################## 定义jd_try相关参数（选填） ##################################
 
 ##控制jd_try启停，true启用，false停用
-export JD_TRY="false"
+export JD_TRY="true"
 
 ##控制每次获取商品数量，默认50建议使用默认
 export JD_TRY_MAXLENGTH=""
