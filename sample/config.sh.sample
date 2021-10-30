@@ -780,3 +780,10 @@ EnableExtraShell=""
 
 ################################## 额外的环境变量（选填） ##################################
 ## 请在以下补充你需要用到的额外的环境变量，形式：export 变量名="变量值"
+
+
+# 发财挖宝help助力
+# 变量格式  多账号邀请码用@隔开
+export fcwbinviteCode=""
+export fcwbinviter=""
+export fcwbroud="1"
